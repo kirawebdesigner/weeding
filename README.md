@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 💍 Wedding Invitation — Abebe & Tigist
 
-# Run and deploy your AI Studio app
+A luxurious, dark-themed, mobile-first digital wedding invitation built as a single-page static site.
 
-This contains everything you need to run your app locally.
+## ✨ Features
+- **Hero** with gradient overlay & gold shimmer typography
+- **Live Countdown** to the wedding day
+- **Interactive Calendar** with highlighted date
+- **Google Maps** integration with directions
+- **Event Timeline** with icons
+- **Bridal Party** photo grid
+- **Photo Carousel** with touch/swipe support
+- **Telegram Bot** integration for guest photo sharing
+- **RSVP Form** with custom radio buttons
+- **Digital Entry Pass** with QR code
 
-View your app in AI Studio: https://ai.studio/apps/767f66df-c30f-427b-a2f4-6a876634f01f
+## 🛠 Tech Stack
+- HTML5 + Tailwind CSS (CDN) + Vanilla JavaScript
+- No build step required — open `index.html` directly
 
-## Run Locally
+## 🚀 Deployment
+Hosted on GitHub Pages: [Live Site](https://kirawebdesigner.github.io/weeding/)
 
-**Prerequisites:**  Node.js
+## 📂 Structure
+```
+├── index.html    # Main invitation page
+├── styles.css    # Custom animations & component styles
+├── app.js        # Countdown, carousel, scroll reveal, RSVP
+└── assets/       # Images (hero, engagement, party, QR)
+```
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+*Made with ❤️ in Addis Ababa*

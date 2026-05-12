@@ -1,13 +1,371 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation — Abebe & Tigist</title>
+  <meta name="description" content="You are cordially invited to celebrate the wedding of Abebe & Tigist on January 25th, 2026.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { gold: { DEFAULT: '#D4AF37', light: '#E8C547', dark: '#B8962E' } },
+          fontFamily: { cinzel: ['Cinzel', 'serif'], cormorant: ['Cormorant Garamond', 'serif'], inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0A0A0A]">
 
+<!-- Particles Container -->
+<div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+<!-- Main Wrapper -->
+<main class="relative z-10 max-w-[480px] mx-auto bg-[#0A0A0A] min-h-screen shadow-2xl shadow-black/50">
+
+  <!-- ========== 1. HERO SECTION ========== -->
+  <section id="hero" class="hero-section">
+    <img src="assets/hero-couple.png" alt="Abebe & Tigist" class="hero-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="font-inter text-[0.7rem] tracking-[6px] uppercase text-gold/80 mb-3">Together with their families</p>
+      <h1 class="font-cinzel text-4xl md:text-5xl font-semibold leading-tight gold-shimmer">
+        Abebe <span class="text-2xl font-normal">&</span> Tigist
+      </h1>
+      <p class="font-inter text-[0.7rem] tracking-[5px] uppercase text-gray-300 mt-3 mb-5">are getting married</p>
+      <div class="gold-divider">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </div>
+      <p class="font-cormorant text-lg text-gray-200 tracking-wide">January 25th, 2026 <span class="mx-2 text-gold">|</span> 5:00 PM</p>
+    </div>
+  </section>
+
+  <!-- ========== 2. WELCOME & QUOTE ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Welcome</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Dear Families & Friends</h2>
+    </div>
+    <p class="font-cormorant text-lg text-gray-300 text-center leading-relaxed mb-8">
+      With hearts full of joy and gratitude, we invite you to share in the celebration of our love as we join our lives together in marriage. Your presence would mean the world to us.
+    </p>
+    <div class="scripture-quote">
+      <p class="font-cormorant text-lg italic text-gray-300 leading-relaxed">
+        "This is the day that the Lord has made; let us rejoice and be glad in it."
+      </p>
+      <p class="font-inter text-xs text-gold mt-3 tracking-wider">— PSALM 118:24</p>
+    </div>
+  </section>
+
+  <!-- ========== 3. COUNTDOWN TIMER ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Mark Your Calendar</p>
+      <h2 id="countdown-heading" class="font-cinzel text-xl text-gray-100">Waiting for the Big Day</h2>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-block">
+        <div id="cd-days" class="countdown-number">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-block">
+        <div id="cd-hours" class="countdown-number">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-block">
+        <div id="cd-mins" class="countdown-number">00</div>
+        <div class="countdown-label">Mins</div>
+      </div>
+      <div class="countdown-block">
+        <div id="cd-secs" class="countdown-number">00</div>
+        <div class="countdown-label">Secs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. SAVE THE DATE CALENDAR ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">January 2026</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Save the Date</h2>
+    </div>
+    <div class="bg-[#161616] rounded-2xl p-5 border border-white/5">
+      <div class="calendar-grid">
+        <div class="calendar-header">Sun</div>
+        <div class="calendar-header">Mon</div>
+        <div class="calendar-header">Tue</div>
+        <div class="calendar-header">Wed</div>
+        <div class="calendar-header">Thu</div>
+        <div class="calendar-header">Fri</div>
+        <div class="calendar-header">Sat</div>
+        <!-- Jan 2026 starts on Thursday -->
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+        <div class="calendar-day">12</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day highlight pulse-gold">25</div>
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+        <div class="calendar-day">31</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. LOCATION & MAP ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Venue</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Location</h2>
+    </div>
+    <div class="text-center mb-5">
+      <p class="font-cormorant text-2xl text-gray-200">Hilton Addis Ababa</p>
+      <p class="font-inter text-sm text-gray-400 mt-1">Menelik II Avenue, Addis Ababa, Ethiopia</p>
+    </div>
+    <div class="map-container mb-5">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.76!3d9.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sHilton%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+        width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" class="rounded-xl">
+      </iframe>
+    </div>
+    <a href="https://maps.google.com/?q=Hilton+Addis+Ababa" target="_blank" class="btn-outline w-full">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Get Directions
+    </a>
+  </section>
+
+  <!-- ========== 6. EVENT TIMELINE ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Schedule</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Event Timeline</h2>
+    </div>
+    <div class="timeline">
+      <!-- Arrival -->
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        </div>
+        <p class="font-inter text-xs tracking-[3px] uppercase text-gold mb-1">11:00 AM</p>
+        <p class="font-cormorant text-lg text-gray-200">Guest Arrival</p>
+        <p class="font-inter text-xs text-gray-500 mt-1">Welcome drinks & seating</p>
+      </div>
+      <!-- Ceremony -->
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <p class="font-inter text-xs tracking-[3px] uppercase text-gold mb-1">12:00 PM</p>
+        <p class="font-cormorant text-lg text-gray-200">Wedding Ceremony</p>
+        <p class="font-inter text-xs text-gray-500 mt-1">Exchange of vows & rings</p>
+      </div>
+      <!-- Photo Session -->
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <svg viewBox="0 0 24 24"><path d="M12 15.2a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4z"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+        </div>
+        <p class="font-inter text-xs tracking-[3px] uppercase text-gold mb-1">2:00 PM</p>
+        <p class="font-cormorant text-lg text-gray-200">Photo Session</p>
+        <p class="font-inter text-xs text-gray-500 mt-1">Capturing beautiful moments</p>
+      </div>
+      <!-- Dinner -->
+      <div class="timeline-item" style="padding-bottom:0">
+        <div class="timeline-dot">
+          <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        </div>
+        <p class="font-inter text-xs tracking-[3px] uppercase text-gold mb-1">4:00 PM</p>
+        <p class="font-cormorant text-lg text-gray-200">Dinner & Dancing</p>
+        <p class="font-inter text-xs text-gray-500 mt-1">Feast, toast & celebration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. BRIDAL PARTY ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Our People</p>
+      <h2 class="font-cinzel text-xl text-gray-100">The Bridal Party</h2>
+    </div>
+    <div class="party-grid">
+      <div class="party-card reveal">
+        <img src="assets/party-1.png" alt="Dawit" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Dawit Mesfin</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Best Man</p>
+      </div>
+      <div class="party-card reveal">
+        <img src="assets/party-2.png" alt="Sara" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Sara Tadesse</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Maid of Honor</p>
+      </div>
+      <div class="party-card reveal">
+        <img src="assets/party-3.png" alt="Yonas" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Yonas Bekele</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Groomsman</p>
+      </div>
+      <div class="party-card reveal">
+        <img src="assets/party-4.png" alt="Hanna" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Hanna Girma</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Bridesmaid</p>
+      </div>
+      <div class="party-card reveal">
+        <img src="assets/party-5.png" alt="Abel" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Abel Assefa</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Groomsman</p>
+      </div>
+      <div class="party-card reveal">
+        <img src="assets/party-1.png" alt="Meron" class="party-avatar">
+        <p class="font-cinzel text-sm text-gray-200">Meron Hailu</p>
+        <p class="font-cormorant text-xs italic text-gold/80">Bridesmaid</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. PHOTO GALLERY & TELEGRAM ========== -->
+  <section class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Memories</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Our Story</h2>
+    </div>
+    <!-- Carousel -->
+    <div class="carousel-container mb-4">
+      <div id="carousel-track" class="carousel-track">
+        <div class="carousel-slide"><img src="assets/engagement-1.png" alt="Engagement 1"></div>
+        <div class="carousel-slide"><img src="assets/engagement-2.png" alt="Engagement 2"></div>
+        <div class="carousel-slide"><img src="assets/engagement-3.png" alt="Engagement 3"></div>
+      </div>
+    </div>
+    <div class="carousel-dots">
+      <div class="carousel-dot active" data-index="0"></div>
+      <div class="carousel-dot" data-index="1"></div>
+      <div class="carousel-dot" data-index="2"></div>
+    </div>
+    <!-- Telegram CTA -->
+    <div class="mt-8 text-center">
+      <div class="bg-[#161616] rounded-2xl p-6 border border-white/5">
+        <svg class="mx-auto mb-3" width="32" height="32" viewBox="0 0 24 24" fill="#D4AF37"><path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192L8.35 15.696l-.01.01v.01l-.003-.003-.353 5.17c.518 0 .746-.238 1.036-.52l2.487-2.417 5.17 3.818c.953.524 1.638.254 1.877-.883l3.395-16.003c.348-1.394-.532-2.027-1.444-1.612l-.839.451z"/></svg>
+        <p class="font-cormorant text-lg text-gray-200 mb-1">Share Your Pictures & Voice Notes</p>
+        <p class="font-inter text-xs text-gray-500 mb-4">Send us your best moments through Telegram</p>
+        <a href="#" class="btn-gold text-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192L8.35 15.696l-.01.01v.01l-.003-.003-.353 5.17c.518 0 .746-.238 1.036-.52l2.487-2.417 5.17 3.818c.953.524 1.638.254 1.877-.883l3.395-16.003c.348-1.394-.532-2.027-1.444-1.612l-.839.451z"/></svg>
+          Open Telegram Bot
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. RSVP FORM ========== -->
+  <section id="rsvp" class="section reveal">
+    <div class="text-center mb-8">
+      <p class="font-inter text-[0.65rem] tracking-[5px] uppercase text-gold mb-2">Respond</p>
+      <h2 class="font-cinzel text-xl text-gray-100">Join Us</h2>
+    </div>
+    <form id="rsvp-form" class="space-y-5">
+      <div>
+        <label class="font-inter text-xs text-gray-400 tracking-wider uppercase mb-2 block">Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required class="form-input">
+      </div>
+      <div>
+        <label class="font-inter text-xs text-gray-400 tracking-wider uppercase mb-2 block">Will you attend?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="attend-yes" name="attending" value="yes" required>
+            <label for="attend-yes">Joyfully Accept</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="attend-no" name="attending" value="no">
+            <label for="attend-no">Regretfully Decline</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label class="font-inter text-xs text-gray-400 tracking-wider uppercase mb-2 block">Which side?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="side-groom" name="side" value="groom" required>
+            <label for="side-groom">Groom's</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="side-bride" name="side" value="bride">
+            <label for="side-bride">Bride's</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="side-both" name="side" value="both">
+            <label for="side-both">Both</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label class="font-inter text-xs text-gray-400 tracking-wider uppercase mb-2 block">Message for the Newlyweds</label>
+        <textarea name="message" rows="4" placeholder="Write your wishes..." class="form-input resize-none"></textarea>
+      </div>
+      <button type="submit" class="btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Send RSVP
+      </button>
+    </form>
+  </section>
+
+  <!-- ========== 10. DIGITAL ENTRY PASS ========== -->
+  <section class="section reveal">
+    <div class="entry-pass text-center">
+      <p class="font-inter text-[0.6rem] tracking-[6px] uppercase text-gold/60 mb-1">Digital</p>
+      <h2 class="font-cinzel text-lg text-gray-100 mb-1">Access Pass</h2>
+      <p class="font-inter text-xs text-gray-500 mb-4">GUEST</p>
+      <hr class="dashed-line">
+      <div class="my-6">
+        <img id="qr-image" src="assets/qr-code.png" alt="QR Entry Pass" class="w-40 h-40 mx-auto rounded-xl object-contain opacity-90">
+      </div>
+      <hr class="dashed-line">
+      <p class="font-inter text-xs text-gray-500 mt-4 mb-4">Please present this code at the entrance</p>
+      <button onclick="downloadQR()" class="btn-outline text-xs mx-auto">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download Pass
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="py-10 text-center border-t border-white/5">
+    <div class="gold-divider mb-4">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <p class="font-cinzel text-sm text-gray-400">Abebe & Tigist</p>
+    <p class="font-inter text-[0.65rem] text-gray-600 mt-1 tracking-wider">JANUARY 25, 2026</p>
+    <p class="font-inter text-[0.6rem] text-gray-700 mt-4">Made with love in Addis Ababa</p>
+  </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
